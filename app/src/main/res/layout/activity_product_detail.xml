@@ -1,0 +1,66 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- IMAGE (proper scaling) -->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="fitCenter"
+            android:background="#F5F5F5"/>
+
+        <!-- NAME -->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <!-- PRICE -->
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#6A1B9A"
+            android:layout_marginTop="4dp"/>
+
+        <!-- DESCRIPTION -->
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product description..."
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"/>
+
+        <!-- FEATURES -->
+        <TextView
+            android:id="@+id/features"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Feature 1\n• Feature 2\n• Feature 3"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- BUTTON -->
+        <Button
+            android:id="@+id/addToCart"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Add to Cart"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#6A1B9A"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</ScrollView>
