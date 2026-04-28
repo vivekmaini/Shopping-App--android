@@ -72,7 +72,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             features.setText("• High quality\n• Long lasting\n• Best in class");
 
         }
-        // ✅ ADD TO CART BUTTON
+
         addToCart.setOnClickListener(v -> {
 
             if (dbHelper.isProductExists(productName)) {
@@ -82,7 +82,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             }
 
             Toast.makeText(ProductDetailActivity.this,
-                    "Added to Cart 🛒",
+                    "Added to Cart ",
                     Toast.LENGTH_SHORT).show();
         });
     }

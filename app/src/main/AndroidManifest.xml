@@ -24,6 +24,8 @@
         <activity android:name=".activities.PaymentActivity"/>
         <activity android:name=".activities.AddressActivity"/>
         <activity android:name=".activities.ProductDetailActivity"/>
+        <activity android:name=".activities.InvoiceActivity"/>
+        <activity android:name=".activities.OrderHistoryActivity"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDODJy0wXPQ7TKc8fPMP8BueABph2Q2x78"/>

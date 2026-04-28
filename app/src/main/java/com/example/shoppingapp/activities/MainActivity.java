@@ -27,25 +27,37 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnCart = findViewById(R.id.btnCart);
         recyclerView = findViewById(R.id.recyclerView);
-
+        Button orderBtn = findViewById(R.id.orderBtn);
         dbHelper = new DBHelper(this);
 
-        // 👉 open cart
+        // open cart
         btnCart.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, Activity_Cart.class));
         });
+        orderBtn.setOnClickListener(v -> {
 
-        // 👉 insert products only once
+            startActivity(new Intent(this, OrderHistoryActivity.class));
+
+        });
+
+        //  insert products only once
         if (dbHelper.isProductTableEmpty()) {
             dbHelper.insertProduct("Shoes", 999, R.drawable.shoes);
             dbHelper.insertProduct("T-Shirt", 499, R.drawable.shirts);
             dbHelper.insertProduct("Watch", 1999, R.drawable.watch);
+            dbHelper.insertProduct("Headphones", 1499, R.drawable.headphones);
+            dbHelper.insertProduct("Smartphone", 15999, R.drawable.mobile);
+            dbHelper.insertProduct("Laptop", 55999, R.drawable.laptop);
+            dbHelper.insertProduct("Backpack", 799, R.drawable.bag);
+            dbHelper.insertProduct("Sunglasses", 699, R.drawable.glasses);
+            dbHelper.insertProduct("Sneakers", 1299, R.drawable.sneakers);
+            dbHelper.insertProduct("Perfume", 999, R.drawable.perfume);
         }
 
-        // 👉 get data
+
         List<Product> list = dbHelper.getProducts();
 
-        // 👉 adapter
+
         ProductAdapter adapter = new ProductAdapter(this, list);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

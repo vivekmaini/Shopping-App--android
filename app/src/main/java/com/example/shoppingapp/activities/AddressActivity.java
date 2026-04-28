@@ -55,8 +55,14 @@ public class AddressActivity extends AppCompatActivity implements OnMapReadyCall
         }
 
         btnContinue.setOnClickListener(v -> {
-            Toast.makeText(this, "Address Selected 📍", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, PaymentActivity.class));
+
+            String userAddress = address.getText().toString();
+
+            Intent intent = new Intent(AddressActivity.this, PaymentActivity.class);
+            intent.putExtra("total", getIntent().getDoubleExtra("total", 0));
+            intent.putExtra("address", userAddress);
+
+            startActivity(intent);
         });
     }
 
@@ -70,7 +76,6 @@ public class AddressActivity extends AppCompatActivity implements OnMapReadyCall
 
             mMap.setMyLocationEnabled(true);
 
-            // 🔥 REAL-TIME LOCATION
             LocationRequest request = LocationRequest.create();
             request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
             request.setInterval(2000);
@@ -94,7 +99,7 @@ public class AddressActivity extends AppCompatActivity implements OnMapReadyCall
 
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLoc, 17));
 
-                                // 🔥 AUTO ADDRESS
+                                //  AUTO ADDRESS
                                 Geocoder geocoder = new Geocoder(AddressActivity.this, Locale.getDefault());
 
                                 try {
@@ -123,7 +128,7 @@ public class AddressActivity extends AppCompatActivity implements OnMapReadyCall
                     1);
         }
 
-        // 🔥 CLICK → CHANGE ADDRESS
+
         mMap.setOnMapClickListener(latLng -> {
 
             mMap.clear();
